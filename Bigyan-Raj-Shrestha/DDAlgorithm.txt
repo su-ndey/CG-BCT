@@ -1,0 +1,15 @@
+DDA 
+
+1. Initialize empty lists: xcoord, ycoord
+2. Prompt user to enter coordinates (x1, y1) for the start point
+3. Append (x1, y1) to xcoord, ycoord
+4. Prompt user to enter coordinates (x2, y2) for the end point
+5. Calculate the differences: delta_x = x2 - x1, delta_y = y2 - y1
+6. Determine the number of steps: steps = max(abs(delta_x), abs(delta_y))
+7. Calculate the increments: x_inc = delta_x / steps, y_inc = delta_y / steps
+8. For i from 0 to steps-1:
+    9. Increment x1 by x_inc, y1 by y_inc
+    10. Append the new values of (x1, y1) to xcoord, ycoord
+    11. Print the new (x1, y1)
+9. Plot xcoord, ycoord on a graph using plt.plot()
+10. Display the plot with plt.show()
