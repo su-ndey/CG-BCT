@@ -1,0 +1,35 @@
+Import the necessary library:
+import matplotlib.pyplot as plt
+
+Get user inputs:
+Read and convert the x and y coordinates for two points to integers.
+
+Calculate differences:
+Compute the absolute differences dx and dy between the coordinates.
+
+Determine the number of steps:
+Set steps to the maximum of dx and dy.
+
+Calculate increments:
+Compute x_incr and y_incr as dx / steps and dy / steps.
+
+Initialize starting point:
+Set initial values for x and y to the first point's coordinates.
+
+Store initial point:
+Add the starting point to x_list and y_list.
+
+Generate points:
+Loop through the number of steps, updating x and y by their increments, rounding them, and adding to the lists.
+
+Print the lists of points:
+Output the lists x_list and y_list.
+
+Print the starting point:
+Display the starting point coordinates.
+
+Plot the points:
+Create a plot with the generated points and highlight the start and end points.
+
+Show the plot:
+Display the plot with labels, grid, and legend.
