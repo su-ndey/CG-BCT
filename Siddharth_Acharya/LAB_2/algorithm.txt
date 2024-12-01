@@ -1,0 +1,36 @@
+Algorithm for all cases
+Input
+• Start point (20, 30) and end point (21, 41)
+Steps
+1. Calculate Differences:
+• 40= 21- 20
+2. Determine the Dominant Axis:
+• If Ax ≥ Ay, the line has a shallow slope (m| ≤ 1).
+• If Ax < Ay, the line has a steep slope (m. > I).
+3. Set Step Directions:
+•Sz=1ifzi＞ To, otherwise sa=-1.
+•
+sy=1if ya ＞ 30,otherwise sy =-1
+4. Initialize Decision Parameter:
+• For shallow slopes (m ≤ 1):
+ро = 24y - Дх
+• For steep slopes (m > 1):
+• For steep slopes (m > 1):
+Swap roles of x and y, and set:
+P0 = 24x
+Ду
+5. Plot the Initial Point:
+• Plot (xo, yo).
+6. Iterate Until the Endpoint is Reached:
+• For k = 0 to the dominant axis length (x or Ду):
+• For shallow slopes (m < 1):
+• Increment 2o by Sr.
+• If pk ≥ 0:
+• Increment yo by sy-
+• Update pk+1 = Pk + 2Ду - 2Дх.
+• Else:
+• Update pk+1 = Pk + 2Ду.
+7. Terminate:
+• Stop when the endpoint (21, 1) is plotted.
+Output
+• A sequence of plotted points (2, y) forming the rasterized line.
