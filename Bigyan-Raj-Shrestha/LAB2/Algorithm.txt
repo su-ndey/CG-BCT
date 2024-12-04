@@ -1,0 +1,12 @@
+1. Get the starting coordinates `x1` and `y1` from the user.
+2. Get the ending coordinates `x2` and `y2` from the user.
+3. Create two empty lists: `xCord` and `yCord` to store the line's points.
+4. Append the starting coordinates `(x1, y1)` to the lists `xCord` and `yCord`.
+5. Calculate the differences in the x and y directions: `delta_x = x2 - x1` and `delta_y = y2 - y1`.
+6. Calculate the initial decision parameter: `p = 2 * delta_y - delta_x`.
+7. While `x1 <= x2`, do the following:
+   - Increment `x1` by 1.
+   - If `p < 0`, update `p` by adding `2 * delta_y`.
+   - If `p >= 0`, update `p` by adding `2 * delta_y - 2 * delta_x` and increment `y1`.
+   - Append the new coordinates `(x1, y1)` to the lists `xCord` and `yCord`.
+8. Plot the points stored in `xCord` and `yCord` using `matplotlib`, marking the points with a star marker (`*`).
