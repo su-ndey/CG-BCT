@@ -1,0 +1,41 @@
+Algorithm for Bresenham's Line Drawing
+
+Input:
+Read the coordinates of the starting point (x1, y1) and the ending point (x2, y2).
+Calculate Differences:
+Compute the absolute differences in the x and y coordinates:
+delx = |x2 - x1|
+dely = |y2 - y1|
+Determine Slope:
+Calculate the slope m:
+If delx is not zero, m = dely / delx
+If delx is zero, set m to infinity (vertical line).
+Initialize Variables:
+Set x and y to the starting coordinates (x1, y1).
+Create two empty lists: xcord and ycord to store the coordinates of the points on the line.
+Calculate the initial decision parameter P:
+If m <= 1, set P = 2 * dely - delx
+If m > 1, set P = 2 * delx - dely
+Bresenham's Algorithm:
+Case 1: If the slope is less than or equal to 1 (i.e., m <= 1):
+Loop while x <= x2:
+1. Append the current (x, y) to xcord and ycord.
+2. If P < 0:
+   - Update P by adding 2 * dely.
+   - Else:
+     - Update P by adding 2 * (dely - delx) and increment y by 1.
+3. Increment x by 1.
+Case 2: If the slope is greater than 1 (i.e., m > 1):
+1. Update P to 2 * delx - dely.
+2. Loop while y <= y2:
+   - Append the current (x, y) to xcord and ycord.
+   - If P < 0:
+     - Update P by adding 2 * delx.
+   - Else:
+     - Update P by adding 2 * (delx - dely) and increment x by 1.
+   - Increment y by 1.
+Output:
+Return the lists xcord and ycord containing the coordinates of the points that form the line.
+Plotting:
+Use matplotlib to plot the points stored in xcord and ycord.
+Set up the plot with labels, title, and grid, and display the plot.
