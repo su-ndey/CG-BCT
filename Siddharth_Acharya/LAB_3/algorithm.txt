@@ -1,0 +1,57 @@
+Midpoint Circle Drawing Algorithm
+
+Step 1: 
+    Import matplot lib for plotting
+
+
+Step 2:
+    Take inputs for centre points and radius [x,y,r]
+
+
+Step 3:
+    Initialize list for circle points
+
+
+Step 4:
+    Initialize the variables
+    x=0 : Initial coordinate of x
+    y=r : Initial coordinate of y
+    p=1-r : Initial parameter
+
+
+Step 5:
+    Define function to add symmetric points : 
+    # For xes
+        xc + x  # 1st point
+        xc - x  # 2nd point
+        xc + y  # 3rd point
+        xc - y  # 4th point
+        xc + x  # 5th point (repeated for symmetry)
+        xc - x  # 6th point (repeated for symmetry)
+        xc + y  # 7th point (repeated for symmetry)
+        xc - y  # 8th point (repeated for symmetry)
+
+    # For yes
+        yc + y  # 1st point
+        yc + y  # 2nd point (repeated for symmetry)
+        yc + x  # 3rd point
+        yc + x  # 4th point (repeated for symmetry)
+        yc - y  # 5th point
+        yc - y  # 6th point (repeated for symmetry)
+        yc - x  # 7th point
+        yc - x  # 8th point (repeated for symmetry)
+
+
+Step 6:
+    Apply the algorithm
+        while x < y:
+            x += 1
+            if p < 0:
+                p += 2 * x + 1
+            else:
+                y -= 1
+                p += 2 * x - 2 * y + 1
+            add_circle_points(xc, yc, x, y)
+
+Step 7:   
+    Plot the circle points in the list
