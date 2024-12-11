@@ -1,7 +1,6 @@
 
 ## Midpoint Circle Drawing Algorithm
-
-### Steps:
+### Steps To Draw Circle:
 
 1. **Initialize Variables:**
    - Set `x = 0` and `y = r`.
