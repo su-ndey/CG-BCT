@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-
 # Function to calculate and plot the symmetric points of the circle
 def points_plot(xes, yes, x, y, xc, yc): 
     # Extend the x and y lists with 8 symmetric points for the current (x, y)
@@ -43,6 +42,4 @@ def MidPointCircle():
     plt.scatter(xes, yes, marker='o')  # Plot points as scatter plot
     plt.grid(True)  # Add grid to the plot
     plt.show()  # Display the plot
-
-# Call the function to execute the algorithm
 MidPointCircle()
