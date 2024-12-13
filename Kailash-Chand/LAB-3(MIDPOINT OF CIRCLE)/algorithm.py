@@ -1,4 +1,4 @@
-k# midpoint method to draw a circle
+# midpoint method to draw a circle
 import matplotlib.pyplot as plt
 
 x = 0
