@@ -1,4 +1,4 @@
-#pygame 
+#pygame project 
 import math
 import random
 
