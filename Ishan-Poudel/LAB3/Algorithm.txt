@@ -1,0 +1,24 @@
+1.Input Values:
+Enter the circle's radius (r).
+Enter the circle's center coordinates (xc, yc).
+
+2.Initialize Variables:
+Start with x = 0 and y = r.
+Calculate the initial decision parameter: p = 1 - r.
+
+3.First Point:
+Add the starting point (x + xc, y + yc) to the list of points.
+
+4.Iterate While x < y:
+Increment x by 1.
+Update the decision parameter:
+If p < 0: Use p = p + 2*x + 1.
+Otherwise: Decrement y by 1 and update p = p + 2*(x - y) + 1.
+Compute symmetric points for all eight octants based on (x, y).
+Append these points to the list of x and y coordinates.
+
+5.Plot the Circle:
+Use the collected x and y coordinates to plot the circle with matplotlib.
+
+6.Show the Plot:
+Display the final circle using plt.show().
