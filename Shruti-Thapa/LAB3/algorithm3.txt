@@ -1,0 +1,15 @@
+1. Start by importing the `matplotlib.pyplot` library for plotting.  
+2. Define a function `plot` that takes parameters `x`, `y`, `xc`, `yc`, `xes`, and `yes`.  
+3. Inside the function `plot`, calculate the eight symmetric points of a circle using the current `x` and `y` values and add them to the lists `xes` and `yes`.  
+4. Initialize the starting values for `x` and `y`, where `x` is set to 0 and `y` is set to the radius `r`.  
+5. Prompt the user to input the values for `xc`, `yc`, and `r`, which represent the center of the circle and its radius.  
+6. Compute the initial decision parameter `p` for the midpoint circle algorithm as \( p = 1 - r \).  
+7. Create two empty lists, `xes` and `yes`, to store the x and y coordinates of the circle points.  
+8. Call the `plot` function with the initial values of `x`, `y`, `xc`, `yc`, `xes`, and `yes`.  
+9. Use a `while` loop to calculate the points of the circle for the first octant until `x` is less than `y`.  
+10. Increment `x` by 1 at each iteration.  
+11. Update the decision parameter `p`. If `p` is less than 0, modify it by adding \( 2x + 1 \). Otherwise, decrement `y` by 1 and update `p` with \( 2(x-y) + 1 \).  
+12. For each updated value of `x` and `y`, call the `plot` function to compute and add the symmetric points to `xes` and `yes`.  
+13. After exiting the loop, use `plt.scatter` to plot the points stored in `xes` and `yes`.  
+14. Set the aspect ratio of the plot to "equal" and enable a grid for better visualization.  
+15. Display the plot using `plt.show()`.  
