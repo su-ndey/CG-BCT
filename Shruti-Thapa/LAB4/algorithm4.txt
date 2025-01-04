@@ -1,0 +1,24 @@
+1. Start by importing the `matplotlib.pyplot` library for visualization.  
+2. Define a function `midpoint_ellipse` that takes the semi-major axis (`rx`), semi-minor axis (`ry`), and center coordinates (`xc`, `yc`) of the ellipse as inputs.  
+3. Initialize the starting point of the ellipse with `x = 0` and `y = ry`.  
+4. Create an empty list `points` to store the calculated points on the ellipse.  
+5. Define a helper function `plot_symmetry` to calculate and store the symmetric points of the ellipse based on the current `x` and `y` values.  
+6. Compute the initial decision parameter `P1` for region 1 of the ellipse using the midpoint ellipse formula.  
+7. Compute the initial `dx` and `dy` values, which represent the change in the x and y coordinates, respectively.  
+8. Add the symmetric points of the initial position to the list `points` by calling `plot_symmetry`.  
+9. Begin iterating in region 1, where the slope of the ellipse is less than 1 (`dx < dy`).  
+10. Update the decision parameter `P1` based on its value and adjust `x`, `y`, `dx`, and `dy` accordingly.  
+11. Add the newly calculated symmetric points to the list `points` for each iteration in region 1.  
+12. Transition to region 2 when `dx` becomes greater than or equal to `dy`.  
+13. Compute the initial decision parameter `P2` for region 2 using the midpoint ellipse formula.  
+14. Continue iterating in region 2, where the slope of the ellipse is greater than or equal to 1 (`y > 0`).  
+15. Update the decision parameter `P2` based on its value and adjust `x`, `y`, `dx`, and `dy` accordingly.  
+16. Add the symmetric points to the list `points` for each iteration in region 2.  
+17. Return the complete list of points representing the ellipse.  
+18. Define the input parameters `xc`, `yc`, `rx`, and `ry` for the ellipse.  
+19. Call the `midpoint_ellipse` function to generate the points of the ellipse and store them in `ellipse_points`.  
+20. Separate the x and y coordinates of the points using `zip` for plotting.  
+21. Create a figure using `matplotlib` and plot the points with `plt.scatter`.  
+22. Add labels, title, and grid to the plot for better visualization.  
+23. Set the aspect ratio of the plot to "equal" for proper scaling of the ellipse.  
+24. Display the plot using `plt.show()`.  
