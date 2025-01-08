@@ -12,10 +12,9 @@ def DDA():
     steps= max(abs(dx), abs(dy))
     X=[X1]
     Y=[Y1]
-  
+
     xin= dx/steps
     yin=dy/steps 
-
     for i in range(steps):
      X1=X1+xin
      Y1=Y1+yin
