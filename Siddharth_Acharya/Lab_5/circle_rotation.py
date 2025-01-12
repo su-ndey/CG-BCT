@@ -95,10 +95,10 @@ x_new, y_new = transformed_points[0], transformed_points[1]
 plt.figure(figsize=(6, 6))
 
 # Original line
-plt.scatter(x_list, y_list, marker='o', color='blue', label='Original Line')
+plt.scatter(x_list, y_list, marker='o', color='blue', label='Original Circle')
 
 # Transformed line
-plt.scatter(x_new, y_new, marker='x', color='red', linestyle='--', label='Transformed Line')
+plt.scatter(x_new, y_new, marker='x', color='red', linestyle='--', label='Transformed Circle')
 
 plt.title("Circle with Scaling Transformation")
 plt.xlabel("X-axis")
