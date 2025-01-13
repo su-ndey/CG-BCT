@@ -9,15 +9,15 @@ def DDA():
     steps=max(dx,dy)
     xincrement= dx/steps
     yincrement= dy/steps
-    xcordinate=[]
-    ycordinate=[]
+    xes=[]
+    yes=[]
     for i in range(steps):
         x1=x1+xincrement
         y1=y1+yincrement
-        xcordinate.append(x1)
-        ycordinate.append(y1)
+        xes.append(x1)
+        yes.append(y1)
 
-    plt.plot(xcordinate,ycordinate,marker='o')
+    plt.plot(xes,yes,marker='o')
     plt.show()
 
 DDA()
