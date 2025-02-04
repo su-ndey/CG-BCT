@@ -1,0 +1,95 @@
+import numpy as np 
+import matplotlib.pyplot as plt
+
+# Input points
+x0 = int(input("Enter the point x0: "))
+y0 = int(input("Enter the point y0: "))
+x1 = int(input("Enter the point x1: "))
+y1 = int(input("Enter the point y1: "))
+
+# Input rotation angle in degrees
+theta_degrees = float(input("Enter the rotation angle in degrees: "))
+theta = np.radians(theta_degrees)  # Convert degrees to radians
+
+# Input fixed point for rotation
+fx = float(input("Enter the fixed point x (fx): "))
+fy = float(input("Enter the fixed point y (fy): "))
+
+# Bresenham's line algorithm
+def Bresen(x0, y0, x1, y1):
+    dx = abs(x1 - x0)
+    dy = abs(y1 - y0)
+
+    sx = 1 if x1 > x0 else -1
+    sy = 1 if y1 > y0 else -1
+
+    xes = [x0]
+    yes = [y0]
+
+    if dx > dy:
+        p = 2 * dy - dx
+        while x0 != x1:
+            x0 = x0 + sx
+            if p >= 0:
+                y0 = y0 + sy
+                p = p + 2 * (dy - dx)
+            else:
+                p = p + 2 * dy
+            xes.append(x0)
+            yes.append(y0)
+    else:
+        p = 2 * dx - dy
+        while y0 != y1:
+            y0 = y0 + sy
+            if p >= 0:
+                x0 = x0 + sx
+                p = p + 2 * (dx - dy)
+            else:
+                p = p + 2 * dx
+            xes.append(x0)
+            yes.append(y0)
+    
+    return xes, yes
+
+xes, yes = Bresen(x0, y0, x1, y1)
+
+# Rotation matrix for fixed point rotation
+rotation_matrix = np.array([
+    [np.cos(theta), -np.sin(theta), 0],
+    [np.sin(theta), np.cos(theta), 0],
+    [0, 0, 1]
+])
+
+# Create points matrix and translate to origin
+points = np.vstack((xes, yes, np.ones_like(xes)))
+translation_to_origin = np.array([
+    [1, 0, -fx],
+    [0, 1, -fy],
+    [0, 0, 1]
+])
+
+# Translate points to origin, apply rotation, and translate back
+points_translated = translation_to_origin @ points
+TR = rotation_matrix @ points_translated
+
+# Translate back to the original fixed point
+translation_back = np.array([
+    [1, 0, fx],
+    [0, 1, fy],
+    [0, 0, 1]
+])
+
+TR_final = translation_back @ TR
+
+# Plotting
+plt.figure(figsize=(8, 6))
+plt.plot(xes, yes, marker='*', color='blue', linestyle='-', label='Original Line')
+plt.plot(TR_final[0], TR_final[1], color='red', linestyle='--', label='Rotated Line')
+
+plt.title("Bresenham Line with Fixed Point Rotation")
+plt.xlabel("X")
+plt.ylabel("Y")
+plt.legend()
+plt.grid(True)
+plt.axis('equal')
+plt.show()
