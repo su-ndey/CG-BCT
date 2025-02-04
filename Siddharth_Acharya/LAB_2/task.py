@@ -1,13 +1,10 @@
 import matplotlib.pyplot as plt
 
-
-
-
 # Taking Inputs from the user
-x1 = get_integer_input("Enter x coordinate for the starting point: ")
-y1 = get_integer_input("Enter y coordinate for the starting point: ")
-x2 = get_integer_input("Enter x coordinate for the ending point: ")
-y2 = get_integer_input("Enter y coordinate for the ending point: ")
+x1 = int(input("Enter x coordinate for the starting point: "))
+y1 = int(input("Enter y coordinate for the starting point: "))
+x2 = int(input("Enter x coordinate for the ending point: "))
+y2 = int(input("Enter y coordinate for the ending point: "))
 
 # Calculate differences
 dx = abs(x2 - x1)
@@ -48,4 +45,9 @@ x_list, y_list = zip(*points)
 # Plotting
 plt.figure(figsize=(8, 6))
 plt.plot(x_list, y_list, marker='o', color='blue', label='Line Path')
+plt.title("Bresenham's Line Drawing Algorithm")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.grid(True)
+plt.legend()
 plt.show()
