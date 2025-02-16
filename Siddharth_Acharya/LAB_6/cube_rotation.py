@@ -79,6 +79,7 @@ t = np.array([
 
 # Composite matrix
 CM = it @ irx @ iry @ rz @ ry @ rx @ t
+print (CM)
 
 def create_cube():
     vertices = np.array([
